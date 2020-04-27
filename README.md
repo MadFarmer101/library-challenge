@@ -120,7 +120,8 @@ We need to be able to have a time frame when it needs to be returned
 ```
 As a customer
 In order to see what books are available in the library
-I need to be able to see a list of available books```
+I need to be able to see a list of available books
+```
 
 ```
 As a customer
