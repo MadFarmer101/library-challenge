@@ -1,52 +1,158 @@
 ## Library Challenge
 ### Week 1 Ruby challenge
 
-Instructions
--------
-Read this entire README carefully and follow all instructions.
+### Authors 
+[Janko Radakovic](https://github.com/MadFarmer101/library-challenge.git)
+[Robin Lillqvist](https://github.com/robin-lillqvist/library-challenge.git)
+## Built with  
+Ruby   
+**Testing:** RSpec  
 
-* Challenge time: this weekend, until Monday 9am
-* Feel free to use Google, Stack Overflow, your notes, previously written code, books, etc. but work on your own
-* If you refer to or have in whole or partially used the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution to GitHub and create a Pull Request**
-* You must submit a Pull Request to this repository with your code by 9.30am Monday morning - before the stand-up
+## The code   
+This is a virtual library where we have created solutions for the library to store books, see documentation of the stored books and be able to search for books by title and author. We have also made it possible for the library to see a specific list for the books that are checked out to keep track of them. As well as created solutions for a customer to be able to see a list of all books and search for a certain book by both title and author. In order to loan a book of choice we have made it possible for the customer to checkout a book and then get the return date showed and also a solution for returning the book to the library.
+
+## Getting started
+### Dependencies  
+* Ruby
+* RSpec
+
+The Gems used:
+- rake
+- rspec
+- pry
+- pry-byebug
+- rubocop
+
+### Setup   
+For this project you should use Ruby version 2.6.3
+You can check your ruby version:
+>$ rvm list
+
+If you are using the wrong version, then you need to install 2.6.3
+>$ rvm install 2.6.3
+
+And then to use the corret version
+>$ rvm use 2.6.3
+
+Then run bundle to get all the required gems.
+>$ bundle
+
+### Instructions
+Load irb
+
+>$ irb 
+
+Load all the files that are required
+
+>$ load ’lib/library.rb’
+
+>$ load ’lib/customer.rb’
+
+>$ load ’lib/search_services.rb’
+
+Create a new Library
+
+>$ library = Library.new
+
+Search for a book with only part of, or the whole author's name
+
+>$ library.search_author(”Pascal”)
+
+Search for a book with only part of, or the whole title
+
+>$ library.search_title(”kungen”)
+
+Search for books that are checked out an has the status available: false
+
+>$ library.unavailable_books
 
 
-### Tasks
-----
 
-* Fork the challenge repo: https://github.com/CraftAcademy/library-challenge
-* Run the command `bundle install` in the project directory to ensure you have all the gems
-* Write your specs and implementation
-* Be smart about using Git: commit and push often. Use feature branches.
-* Create a Pull Request as soon as possible
-* Read the comments from Hound and fix any issues that the service points out.
+Create a new Customer
 
-### Tips
-----
+>$ customer = Customer.new
 
-##### Some hints:
-  * A Person needs to have a list of books that he currently has in his possession. That list needs to include the return date.
-  * The return date can be calculated using the `Date` object. Out of the box, there are methods you can use to add days to the current date.
-  * Make use of `doubles` when writing your specs
-  * Follow the [naming conventions/standards](https://craftacademy.gitbooks.io/coding-as-a-craft/content/extras/naming_standards.html) for methods and variables
+Create a list of books that aren't checked out, and has the status available: true
 
-### What we are looking for
-----
-##### I'm hoping to see that:
-* You can take a problem set and write a well tested implementation on your own.
-* You understand how to define Ruby Classes and work with objects.
-* You understand how classes can interact with each other.
-* You know how to make use of arrays, hashes, and associated methods to create dynamic lists.
-* You know how to write specs and use them as a blueprint in your development.
-* I can track your work by following you commit history - so please commit as soon you are done with a feature or when you have made a test pass.
+>$ customer.available_books
 
-##### In your Pull Request, I'm hoping to see:
-* That you are testing the right thing in the right spec file.
-* That all tests passing - green is good!
-* High test coverage (above 95% is accepted)
-* The code is easy to follow: every class has a clear responsibility, methods are short, code is nicely formatted, etc.
-* The `README.md` includes information on how to use your solution with command examples in `irb`. (Feel free to remove this text)
+Search for a book with only part of, or the whole author's name
 
+>$ customer.search_author(”Schulman”)
 
-**Happy coding!**
+Search for a book with only part of, or the whole title
+
+>$ customer.search_title(”brev”)
+
+Loan a book by checking it out
+
+>$ customer.checkout_service(1)
+
+Return a loaned book by checking it in
+
+>$ customer.checkin_service(1)
+
+### User Stories
+```
+As a library worker
+In order to see range of books 
+I need to be able to see a list of all the books
+```
+
+```
+As a library worker
+In order to find the right book
+I need to be able to search for both title and author
+```
+
+```
+As a library worker
+In order to see what books are checked out by customer 
+I need to see a list of unvailable books
+```
+
+```
+As a library
+In order to get the checked out books back
+We need to be able to have a time frame when it needs to be returned
+```
+
+```
+As a customer
+In order to see what books are available in the library
+I need to be able to see a list of available books```
+
+```
+As a customer
+In order to find the book I want
+I need to be able to search for both title and author
+```
+
+```
+As a customer
+In order to borrow the book I want
+I need to be able to checkout the book
+```
+
+```
+As a customer
+In order to know when the book has to be returned
+I need to see which date the book has to be return on 
+```
+
+```
+As a customer
+In order to know when the book has to be returned
+I need to see which date the book has to be return on 
+```
+
+```
+As a customer
+In order to return a book
+I need to be able to check the book back in
+```
+ 
+## License  
+[MIT-license](https://en.wikipedia.org/wiki/MIT_License)
+### Acknowledgement  
+[Craft Academy](https://craftacademy.se)  
